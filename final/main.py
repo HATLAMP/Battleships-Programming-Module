@@ -17,13 +17,14 @@ def placement_interface(ships, board_size = 10):
     if request.method == 'POST':
         data = request.get_json()
         return jsonify({'message': 'Received'}), 200
-    
+
 @app.route('/', methods=['GET'])
-def root(main_render_file = 'main.html',player_board ):
+def root(player_board, main_render_file = 'main.html'):
+    pass
     # place the ships on the board
     # current_ board = placement(player_board, data)
     # return render_template(main_render_file, current_boad)
-    
+
 @app.route('/attack', methods=['GET'])
 def process_attack():
     x = request.args.get('x')

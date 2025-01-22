@@ -9,14 +9,14 @@ def initialise_board(size= 10):
     return board
 
 def create_battleships(filename = 'battleships.txt'):
-    battileships = {}
+    battleships = {}
     with open(filename, 'r') as file:
         lines = file.readlines()
         
     for line in lines:
         key, value = line.strip().split(':')
-        battileships[key.strip()] = value.strip()
-    return battileships
+        battleships[key.strip()] = int(value.strip())
+    return battleships
 
 def commands():
     command = input("Input attack coordinate or quit (q), only plain x,y format accepted: ")

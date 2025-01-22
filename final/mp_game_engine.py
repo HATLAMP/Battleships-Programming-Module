@@ -7,9 +7,11 @@ from components import *
 from tabulate import tabulate
 from game_engine import *
 
+# changed to use global variable for board_size
 players = {'user' : [None,None] , 'ai': [None,None]}
+board_size = 10
 
-def generate_attack(board_size):
+def generate_attack():
     x = random.randint(0,board_size-1)
     y = random.randint(0,board_size-1)
     coordinates_attack = x,y
@@ -87,7 +89,7 @@ def ai_opponent_game_loop():
                 active = False
         
         ## AI play
-        coordinates2 = generate_attack(board_size)
+        coordinates2 = generate_attack()
 
         result_ai = attack(coordinates2,brd1_w_ships,btlshp1)
         if result_ai == True:
